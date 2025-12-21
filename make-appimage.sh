@@ -14,7 +14,9 @@ export DESKTOP=/usr/share/applications/qelectrotech.desktop
 # Deploy dependencies
 quick-sharun /usr/bin/qelectrotech /usr/share/qelectrotech
 
-# Additional changes can be done in between here
+# The gtk3 plugin does not change the look of the app for some reason
+# this bug also hapens in the native distro package
+rm -f ./AppDir/lib/qt/plugins/platformthemes/libqgtk3.so
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
